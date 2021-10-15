@@ -30,7 +30,17 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.ViewHolder> 
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
+    public void onBindViewHolder( ViewHolder holder, int position) {
+
+        // here we will find the position and start setting the output on our views
+
+        String nameofDrink = modelList.get(position).getmDrinkName();
+        String descriptionofdrink = modelList.get(position).getmDrinkDetail();
+        int images = modelList.get(position).getmDrinkPhoto();
+
+        holder.mDrinkName.setText(nameofDrink);
+        holder.mDrinkDescription.setText(descriptionofdrink);
+        holder.imageView.setImageResource(images);
 
     }
 
