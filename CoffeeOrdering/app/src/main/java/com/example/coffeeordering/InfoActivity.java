@@ -64,6 +64,9 @@ public class InfoActivity extends AppCompatActivity {
                 } else {
                     quantity--;
                     displayQuantity();
+                    int coffePrice = basePrice * quantity;
+                    String setnewPrice = String.valueOf(coffePrice);
+                    coffeePrice.setText(setnewPrice);
                 }
             }
         });
