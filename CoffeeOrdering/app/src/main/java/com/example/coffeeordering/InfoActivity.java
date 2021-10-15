@@ -1,5 +1,6 @@
 package com.example.coffeeordering;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -39,6 +40,14 @@ public class InfoActivity extends AppCompatActivity {
 
         // setting the name of drink
         drinnkName.setText("Green Tea");
+
+        addtoCart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(InfoActivity.this, SummaryActivity.class);
+                startActivity(intent);
+            }
+        });
 
         plusquantity.setOnClickListener(new View.OnClickListener() {
             @Override
