@@ -24,7 +24,7 @@
 
         <provider
             android:name=".database.OrderProvider"
-            android:authorities="com.example.orderapp"
+            android:authorities="com.example.coffeeordering"
             android:exported="true" />
 
     </application>

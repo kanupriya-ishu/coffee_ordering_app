@@ -205,7 +205,7 @@ public class InfoActivity extends AppCompatActivity implements LoaderManager.Loa
     }
 
     @Override
-    public void onLoaderReset(@NonNull Loader<Cursor> loader) {
+    public void onLoaderReset(Loader<Cursor> loader) {
         drinkName.setText("");
         coffeePrice.setText("");
         quantitynumber.setText("");
