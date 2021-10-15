@@ -1,11 +1,22 @@
 package com.example.coffeeordering;
 
+import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.util.List;
+
 public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.ViewHolder> {
+
+    List<Model> modelList;
+    Context context;
+
+    public OrderAdapter(Context context, List<Model> modelList) {
+        this.context = context;
+        this.modelList = modelList;
+    }
 
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
