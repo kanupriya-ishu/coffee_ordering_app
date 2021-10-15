@@ -175,7 +175,32 @@ public class InfoActivity extends AppCompatActivity implements LoaderManager.Loa
     }
 
     @Override
-    public void onLoadFinished(@NonNull Loader<Cursor> loader, Cursor cursor) {
+    public void onLoadFinished(Loader<Cursor> loader, Cursor cursor) {
+
+        if (cursor == null || cursor.getCount() < 1) {
+            return;
+        }
+
+        if (cursor.moveToFirst()) {
+
+            int name = cursor.getColumnIndex(OrderContract.OrderEntry.COLUMN_NAME);
+            int price = cursor.getColumnIndex(OrderContract.OrderEntry.COLUMN_PRICE);
+            int quantity = cursor.getColumnIndex(OrderContract.OrderEntry.COLUMN_QUANTITY);
+            int hasCream = cursor.getColumnIndex(OrderContract.OrderEntry.COLUMN_CREAM);
+            int hasTopping = cursor.getColumnIndex(OrderContract.OrderEntry.COLUMN_HASTOPPING);
+
+
+            String nameofdrink = cursor.getString(name);
+            String priceofdrink = cursor.getString(price);
+            String quantityofdrink = cursor.getString(quantity);
+            String yeshasCream = cursor.getString(hasCream);
+            String yeshastopping = cursor.getString(hasTopping);
+
+            drinkName.setText(nameofdrink);
+            coffeePrice.setText(priceofdrink);
+            quantitynumber.setText(quantityofdrink);
+        }
+
 
     }
 
