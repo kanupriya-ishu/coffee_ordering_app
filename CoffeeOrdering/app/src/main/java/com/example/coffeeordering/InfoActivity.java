@@ -50,6 +50,10 @@ public class InfoActivity extends AppCompatActivity {
                 int coffePrice = basePrice * quantity;
                 String setnewPrice = String.valueOf(coffePrice);
                 coffeePrice.setText(setnewPrice);
+
+                // checkBoxes functionality
+                int ifCheckBox = calculatePrice(addExtraCream, addToppings);
+                coffeePrice.setText("$ " + ifCheckBox);
             }
         });
 
@@ -70,6 +74,22 @@ public class InfoActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    private int calculatePrice(CheckBox addExtraCream, CheckBox addToppings) {
+        int basePrice = 5;
+
+        if (addExtraCream.isChecked()) {
+            // add the cream cost $2
+            basePrice = basePrice + 2;
+        }
+
+        if (addToppings.isChecked()) {
+            // topping cost is $3
+            basePrice = basePrice + 3;
+        }
+
+        return basePrice * quantity;
     }
 
     private void displayQuantity() {
