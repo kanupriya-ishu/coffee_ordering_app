@@ -43,8 +43,13 @@ public class InfoActivity extends AppCompatActivity {
         plusquantity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // coffee price
+                int basePrice = 5;
                 quantity++;
                 displayQuantity();
+                int coffePrice = basePrice * quantity;
+                String setnewPrice = String.valueOf(coffePrice);
+                coffeePrice.setText(setnewPrice);
             }
         });
 
