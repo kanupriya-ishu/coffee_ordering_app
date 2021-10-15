@@ -1,6 +1,7 @@
 package com.example.coffeeordering;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -49,7 +50,9 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.ViewHolder> 
         return modelList.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    // in order to make our views responsive we can implement onclicklistener on our recyclerview
+
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         // here we will find the views on which we will inflate our data
 
@@ -62,6 +65,23 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.ViewHolder> 
             mDrinkName = itemView.findViewById(R.id.coffeeName);
             mDrinkDescription = itemView.findViewById(R.id.description);
             imageView = itemView.findViewById(R.id.coffeeImage);
+            itemView.setOnClickListener(this);
+
+
+        }
+
+        @Override
+        public void onClick(View v) {
+
+            // lets get the position of the view in list and then work on it
+
+            int position = getAdapterPosition();
+
+            if (position == 0) {
+                Intent intent = new Intent(context, InfoActivity.class);
+                context.startActivity(intent);
+            }
+
         }
     }
 }
