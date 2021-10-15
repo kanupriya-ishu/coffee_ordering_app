@@ -38,6 +38,6 @@ public class MainActivity extends AppCompatActivity {
         // adapter
         mAdapter = new OrderAdapter(this, modelList);
         recyclerView.setAdapter(mAdapter);
-        
+
     }
 }
